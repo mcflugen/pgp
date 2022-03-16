@@ -1,0 +1,20 @@
+format: jb-book
+root: intro
+chapters:
+- file: why
+- file: practices/index
+  sections:
+  - file: practices/versioning
+  - file: practices/testing-and-reproducibility
+  - file: practices/documentation
+  - file: practices/organization
+  - file: practices/script-everything
+  - file: practices/standards
+  - file: practices/style
+  - file: practices/teams
+  - file: practices/packaging
+  - file: practices/dark-side
+  - file: practices/break-the-rules
+  - file: practices/things-we-left-out
+- file: summary
+
