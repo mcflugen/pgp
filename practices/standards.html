@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Standards &#8212; Pretty Good Practices</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="An Approach to style" href="style.html" />
+    <link rel="prev" title="Script everything" href="script-everything.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/csdms-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Pretty Good Practices</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Pretty Good Practices in Geoscientific Model Software
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../why.html">
+   Why?
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Pretty Good Practices
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="versioning.html">
+     Version Control
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="testing-and-reproducibility.html">
+     Testing and Reproducibility
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="documentation.html">
+     Documentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization.html">
+     Project Organization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="script-everything.html">
+     Script everything
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Standards
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="style.html">
+     An Approach to style
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="teams.html">
+     Team Practices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="packaging.html">
+     Packaging and Distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dark-side.html">
+     The dark side of Open Source Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="break-the-rules.html">
+     When to break the rules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="things-we-left-out.html">
+     Things we left out
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../summary.html">
+   Summary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/practices/standards.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/mcflugen/pgp"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/mcflugen/pgp/issues/new?title=Issue%20on%20page%20%2Fpractices/standards.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-organization">
+   Project organization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#language-specific-standards">
+   Language-specific standards
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interfaces">
+   Interfaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-process">
+   Build process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#file-formats">
+   File formats
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Standards</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-organization">
+   Project organization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#language-specific-standards">
+   Language-specific standards
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interfaces">
+   Interfaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-process">
+   Build process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#file-formats">
+   File formats
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="standards">
+<h1>Standards<a class="headerlink" href="#standards" title="Permalink to this headline">¶</a></h1>
+<p>Wherever possible, rely on existing standards. Maintaining a software
+package—or set of packages—is a difficult task, and is even more difficult for
+the typically small teams we see developing scientific software. There is not
+an army of software testers, a battalion of documentation writers, or a troop
+of software developers assigned to your project. No, there is just you. As
+such, you will want to optimize your workflows as much as possible, which means
+relying on standards as much as possible. Standards allow you to tie into a
+wider range of existing tools to help you with the day-to-day maintenance of
+your project, and make your project more accessible to new users and
+contributors. Both of which will make your life easier and your software
+better. If you ever find yourself creating a bespoke solution to a
+problem—whether it be building documentation, loading configuration files,
+writing data files—ask yourself if there isn’t already an existing standard
+that you can use.</p>
+<div class="section" id="project-organization">
+<h2>Project organization<a class="headerlink" href="#project-organization" title="Permalink to this headline">¶</a></h2>
+<p>A well crafted piece of software will be a well organized piece of software. If
+you follow standard practices of project organization, users new to your
+software will immediately know where to look for the files they are interested
+in without having to consult your documentation (once again, by relying on a
+standard, you are able to write and maintain less documentation for your
+users). As with other advice we have provided, the exact organization of files
+will depend on the programming language you are using but, whatever the
+language, there will be a standard project layout. Take the time to figure out
+the standard organizational structure for your language and stick with it. The
+file structure shouldn’t be complicated and will seem natural.</p>
+<p>To use Python as an example, one possible structure will be to have at the
+top-level folder: a “<a class="reference external" href="http://setup.py">setup.py</a>” file, which contains project metadata and a
+means of installing your package, a folder that contains your package’s source
+code, and a tests folder, which holds your project’s unit tests. There are
+resources you can consult to get a fuller picture of what a well organized
+Python project tools like—we’ve outlined just the basic layout—as well as tools
+that will help set up your project for you.</p>
+</div>
+<div class="section" id="language-specific-standards">
+<h2>Language-specific standards<a class="headerlink" href="#language-specific-standards" title="Permalink to this headline">¶</a></h2>
+<p>Stick with the norms of the programming language you are using. These may be
+things like conforming to a particular coding style—CamelCase or snake_case for
+variables, for example. These are things that won’t prevent your code from
+running but will make it easier for others to read and understand. In Python,
+for example, it’s customary to use snake case for variable names but camelcase
+for class names. Knowing this allows you to glance at a snippet of code—even
+out of context—and orient themselves to get an idea of what they are looking,
+and what it does without having to scan back through other files to try to
+discover, for example, if a name is referring to a class or an instance of a
+class. To eliminate this sort of confusion is the one the reasons a standard
+was made for Python (as expressed in PEP8). Python is a good example to use
+here. By design, it is a flexible language—in that it doesn’t impose a
+particular style—but yet it’s author felt the need to provide a set of style
+guidelines that would codify the norms for a community. Other languages will
+have similar standards (and if they don’t, create your own! Just be sure to
+stick with whatever “rules” you come up with. Maybe even publish them somewhere
+and, who knows, maybe they will become a community standard!).</p>
+<p>Examples of other standards:</p>
+<ul class="simple">
+<li><p>C++/C: gnu, google, etc</p></li>
+<li><p>Fortran?</p></li>
+<li><p>Python: PEP8</p></li>
+<li><p>Java</p></li>
+</ul>
+</div>
+<div class="section" id="interfaces">
+<h2>Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this headline">¶</a></h2>
+<p>Just as with file formats, when it makes sense to do so, reuse existing
+interfaces. They will be familiar to your users, they will require less
+documentation, you will write and maintain less documentation, and your
+software will more easily tie into existing tools. Your software will have
+several interfaces to consider. One is, as we have mentioned, input and out
+files.</p>
+<p>For your end users, this will be the primary way they will interact with your
+software but, as we have already discussed this topic, we will not say anything
+more about file standards.</p>
+<p>Another way a user may interact with your software is through its command line
+interface. We will discuss command line interfaces in more detail in another
+section but we note here that there are, once again, standards to fall back
+on—particularly when running on Unix-based systems. A well-behaved command line
+interface has several characteristics.</p>
+<ul class="simple">
+<li><p>Standard options for help and version</p></li>
+<li><p>Verbosity level</p></li>
+<li><p>Reads from standard input if passed a dash as a file name argument</p></li>
+<li><p>Options are optional, arguments are not. There shouldn’t be many options. The
+options for a model simulation—like model parameters—should be kept in a config
+file.</p></li>
+<li><p>Error messages and status is written to standard error. This includes all
+messages to the user.</p></li>
+<li><p>Output, which can be sent to another command, is sent to standard output.</p></li>
+<li><p>If nothing is passed as an argument, it does nothing but doesn’t report an
+error</p></li>
+<li><p>Exits with 0 unless an error occurred. If an error occurred, then exit with a
+non-zero integer.</p></li>
+</ul>
+</div>
+<div class="section" id="build-process">
+<h2>Build process<a class="headerlink" href="#build-process" title="Permalink to this headline">¶</a></h2>
+<p>Every software project needs to turn code into action. The way you do this will
+depend on the language your code is written in-for compiled languages like C or
+Fortran, for instance, this means running your code through a compiler to
+convert it to a language your computer can understand. This step is undoubtedly
+a critical step and is one that you will likely take thousands of times and one
+that new users of your software will struggle with. For new users (or perhaps
+more precisely user-developers) of your software, this will likely be their
+first introduction to your code and if not the hardest step toward running your
+software, it certainly has the potential to be the most frustrating. Speaking
+from experience, the last thing users want to do is mess with compiling code
+and trying to divine the magical collection of compiler flags necessary to get
+your software to build on their computer.  The person who takes pleasure in
+compiling code is indeed folkloric and, if they are ever to be found, I’m
+certain they can’t be trusted. Your users don’t want to compile code, they want
+to run models and do science.</p>
+<p>This is a long way of saying you should strive to make your build process as
+easy as possible. One way to do this is to rely, once again, on standards.
+Although the details will depend on the programming language you are using, a
+discussion using examples from specific languages can still be valuable.
+Although there are others, two standard build tools for building software
+written compiled languages—C, C++, and Fortran, for example—are cmake and
+autotools (a collection of tools that includes the unix utilities autoconf and
+automake). Both of these tools create a standard “Makefile” but do so in
+different ways (as a side note, these two tools are themselves examples of
+software that rely on a standard—the makefile. Both tools generate a makefile
+that a user uses in the standard way to build and install their software). If
+you have a choice, steer clear of autotools—it’s confusing, difficult to learn,
+platform dependent—and, instead, use cmake. Cmake can build projects on both
+Windows and Unix-based platforms, and uses what can loosely be described as a
+“programming language” (unlike autotools) that isn’t difficult to learn.</p>
+<p>There are standard ways to build projects in every language. Python, for
+example, uses setuptools, a setup script (<a class="reference external" href="http://setup.py">setup.py</a>), and a standard project
+layout but other languages will have their own standards. When you rely on a
+standard build process, it will more likely be already familiar to your users.
+They won’t be slowed by have to consult your documentation and you won’t be
+slowed by having to create custom documentation for your project. Instead, you
+can simply point your users to the standard documentation maintained elsewhere.
+Again using Python as an example, the latest build and packaging procedures are
+maintained by The Python Packaging Authority, which has great up-to-date
+instructions. Regardless of the language your software is written in, become
+familiar with its standard and stick to it. Both you and your users will be
+grateful for it.</p>
+</div>
+<div class="section" id="file-formats">
+<h2>File formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">¶</a></h2>
+<p>The standardization of file formats provides opportunities for increased
+efficiency. In many scientific software applications, developers tend to create
+their own idiosyncratic file formats—both for input and output files—when a
+standard file format would do just fine.</p>
+<p>It is common for software models to have at least one text configuration file.
+Such files typically list model parameters for a specific model simulation—the
+number of iterations to run, the size of the time steps, values for physical
+parameters. Standard file formats such as yaml or toml are ideal for these
+situations. They are text based (so easy to put into version control), they are
+easily read by a human, are built to describe configuration data
+structures—i.e. dictionaries or hash tables—and, importantly, libraries already
+exist in most languages that read from and write to these formats. Of course
+new formats come and old formats go-the above formats we have suggested here
+may not exist when you read this-regardless, there will most certainly be a
+standard format for configuration files. Don’t worry about supported a variety
+of standard formats, picking one is fine. So long as it is standard, your users
+will be able to use existing tools to convert between formats. By using
+standard formats you have both made it easier for your users to use your model
+as well as provide an easy to access entry point for them to contribute to your
+software. By using off-the-shelf software they could, for example, create a
+plugin for your model to read from a different standard file format.</p>
+<p>All of the arguments we have used for promoting the use of standard file
+formats for configuration files also applies to data files. Where configuration
+files are text-based and typically used to static parameters for a model
+simulation, data files often contain time series data that may also be
+spatially variable. Examples include a time series of the water discharge for a
+stream or a digital elevation model of a watershed. Although the text-based
+formats we suggest for configuration files are inadequate for this type of
+data, there are other standard formats to choose from. Some popular formats
+include netcdf, or csv. Although a powerful and flexible format, netcdf can
+also be somewhat cumbersome to work with and, being a binary format, requires
+specialized tools to work with. When choosing a data file format, try not to
+overthink things—where a simple format will do, go with simplicity. Your users
+(and you) will appreciate the simplicity of a simple CSV text file that they
+can open with any text editor and see interpret the data with their own eyes.
+And, being a standard format, can be read into most any visualization software
+and plotted. More complicated formats—like netcdf—certainly have their place.
+They are efficient (by compressing data they are able to store lots of data),
+they are flexible (a wide range of data structures can be stored—structured
+data, unstructured data). As we have mentioned, this power comes with the cost
+of a loss in ease-of-use but with larger, more complicated datasets, the
+benefit outweighs the cost. Although netcdf is a standard and commonly used
+format, there are other standard formats suitable for storing large data sets.
+When making a choice, also consider not just the broader use of the format but
+also if there is a standard format that people use in your specific field of
+study. If there is a standard format your users are familiar with, you should
+give that some weight in your decision. Recognize, though, that your choice may
+make it more difficult to integrate your software with a broader community.</p>
+<p>We should note that there is a difference between a data format (like netcdf or
+csv, say) and how data are represented in that format. Netcdf is a general
+format that can store a wide range of data and the way data can be stored is
+just as wide. This is the difference between a format and a schema. As a simple
+example, consider a csv-formatted file that contains a time series of daily air
+temperature at some meteorological station. One obvious way to store the data
+would be as two columns of numbers with the first column being day of the year
+and the second being temperature. Another way would be to list the data in
+rows-the first row being measurement dates and the second row the temperatures.
+Both csv-formatted files, both temperature data but represented in different
+ways. To solve this problem, again, look for standards. In your field, is there
+a standard way people record this sort of data? If so, that’s likely the way to
+go. If not, make good use of metadata to indicate how the data are represented.
+In our example, for instance, you could include a header line that labels each
+column and contains units for the data.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./practices"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="script-everything.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Script everything</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="style.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">An Approach to style</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Community Surface Dynamics Modeling System<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

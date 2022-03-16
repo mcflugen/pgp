@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testing and Reproducibility &#8212; Pretty Good Practices</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Documentation" href="documentation.html" />
+    <link rel="prev" title="Version Control" href="versioning.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/csdms-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Pretty Good Practices</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Pretty Good Practices in Geoscientific Model Software
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../why.html">
+   Why?
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Pretty Good Practices
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="versioning.html">
+     Version Control
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Testing and Reproducibility
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="documentation.html">
+     Documentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization.html">
+     Project Organization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="script-everything.html">
+     Script everything
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="standards.html">
+     Standards
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="style.html">
+     An Approach to style
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="teams.html">
+     Team Practices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="packaging.html">
+     Packaging and Distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dark-side.html">
+     The dark side of Open Source Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="break-the-rules.html">
+     When to break the rules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="things-we-left-out.html">
+     Things we left out
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../summary.html">
+   Summary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/practices/testing-and-reproducibility.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/mcflugen/pgp"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/mcflugen/pgp/issues/new?title=Issue%20on%20page%20%2Fpractices/testing-and-reproducibility.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuous-integration">
+   Continuous Integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analytical-solutions">
+   Analytical solutions
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Testing and Reproducibility</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuous-integration">
+   Continuous Integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analytical-solutions">
+   Analytical solutions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="testing-and-reproducibility">
+<h1>Testing and Reproducibility<a class="headerlink" href="#testing-and-reproducibility" title="Permalink to this headline">¶</a></h1>
+<p>What does it take for a model simulation to be reproducible? Metadata that
+describes the execution environment (dependencies and versions), input files,
+platform details, source code snapshot.</p>
+<div class="section" id="continuous-integration">
+<h2>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h2>
+<p>Continuous integration is the process of running all of your project’s tests
+with every change to your code base. This workflow ensures that any new changes
+to the code do not break any existing tests. Although this may seem excessive
+at first, it is far better to find bugs sooner rather than later. The earlier
+you can identify a problem, the easier it will be to fix. Once a bug becomes
+part of the main code base, and the longer it remains undetected, it becomes
+increasingly integrated into the rest of the code and more difficult to
+identify and remove. Identifying problems before a contribution is merged
+allows the author of the pull request—not the maintainers (i.e. you)—to fix the
+problem. They are the ones most familiar with the code being merged and how
+best to fix any issues. Once merged, however, it becomes increasingly less
+obvious who was responsible for the bug and how best to deal with it. Perhaps
+the contributor has even moved on (graduated, found a job) and isn’t available
+to fix the problem. If they had been aware of the problem at the time, they
+likely could have fixed it quickly right then and there but instead you are
+left to try to disentangle things.</p>
+<p>Thus far we have discussed how a software project can use continuous
+integration as an efficient way to test software and to ensure that bugs are
+found as early as possible and fixed at the time they are identified. Another
+important aspect of continuous integration—particularly in a scientific
+setting—is how it can help with reproducibility. By “reproducibility” we are
+describing the ability of another group to be able to run your software to
+replicate your results—ensuring the conclusions of a published scientific work
+are being faithfully represented by the associated code. Where the first set of
+tests (unit tests) are known as white-box testing, this second set of tests are
+known as black-box testing (system tests).</p>
+<p>Whereas white-box tests ensure that small pieces of code—individual functions,
+the small code blocks that do only one job—are working properly, the purpose of
+black-box tests is to ensure that multiple interconnected pieces of code—even
+your entire application—work together as expected. Ultimately, the black-box
+tests are the ones that matter to your audience since they test the
+functionality of your entire application. They can, however, be more difficult
+to write but, following a few guidelines a project author can put together a
+set of robust tests.</p>
+<p>For software, and scientific software in particular, a robust and thorough set
+of system tests can be difficult to put together. Scientific software can often
+be best described as prototype software—that is, a program that is rapidly
+changing and never truly in a stable state. It’s not always obvious what to
+even compare the results of a simulation to to ensure that it’s working
+correctly. Sometimes we write scientific software to answer questions for which
+we don’t have an answer and the answers are surprises to us—it is difficult to
+follow a test-driven development process when the answers are not known
+beforehand. Other problems also exist such as non-deterministic results that
+may depend on stochastic inputs or parallelism where results will vary slightly
+from run to run depending on the timing of messages being passed between jobs.
+Even running large parallel jobs may not be feasible due to a lack of
+resources. We can’t always overcome all of these problems but we can try to
+minimize them by following some not-too-difficult to implement practices, which
+we outline below.</p>
+<p>Numerical models commonly are used to answer questions for which there is not
+an expected answer. In such cases it’s why we’ve created the model in the first
+place but it makes it difficult to write robust system tests. How can one be
+expected to write a test before the expected result is known? There are several
+solutions to this.</p>
+</div>
+<div class="section" id="analytical-solutions">
+<h2>Analytical solutions<a class="headerlink" href="#analytical-solutions" title="Permalink to this headline">¶</a></h2>
+<p>Where analytic solutions are known, perhaps only for a set of specific cases,
+one can write tests that compare model output to those known solutions.
+Although these tests will likely not test all of your model’s functionality,
+they will provide you the assurance that much of the interconnected components
+of your code are working together as you expect. These tests also demonstrate
+to your users, by reproducing well-known solutions they are familiar with, that
+your software is working. By producing them with the corresponding inputs for
+these solutions, they are then given an easy way to get started and to have a
+template that they can then use to begin playing with your model and possibly
+adapt it to their specific use-case.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./practices"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="versioning.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Version Control</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="documentation.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Documentation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Community Surface Dynamics Modeling System<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
